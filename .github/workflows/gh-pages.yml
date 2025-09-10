@@ -1,11 +1,11 @@
-name: Deploy to gh-pages branch
+name: Deploy Vite app to GitHub Pages (gh-pages branch)
 
 on:
   push:
     branches: [ main ]
 
 jobs:
-  build-and-deploy:
+  build-deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -27,5 +27,4 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
-          user_name: github-actions[bot]
-          user_email: github-actions[bot]@users.noreply.github.com
+          publish_branch: gh-pages
